@@ -215,8 +215,8 @@ function renderList() {
 function renderAdd() {
   if(!formData.activityId&&cats.length) formData.activityId=cats[0].id;
   const actBtns=cats.map(c=>{const sel=formData.activityId===c.id;return `<button class="activity-btn${sel?' selected':''}" style="${sel?`background:${c.color};border-color:${c.color}`:''}" onclick="setActivity('${c.id}')"><span class="emoji">${c.icon}</span><span>${esc(c.label)}</span></button>`;}).join('');
-  const selCat=getCat(formData.activityId), color=selCat?selCat.color:'#555', canSave=formData.date&&formData.cost&&formData.activityId;
-  return `<div><div style="margin-bottom:20px"><div style="font-size:18px;font-weight:900;margin-bottom:4px">新規記録</div><div style="font-size:12px;color:#666">トレーニングの記録を追加します</div></div><div class="form-section"><div class="form-label">種目</div>${cats.length===0?`<div style="color:#666;font-size:13px;padding:8px 0">カテゴリがありません</div>`:`<div class="activity-grid">${actBtns}</div>`}</div><div class="form-section"><div class="form-label">日付</div><input type="date" class="form-input" value="${formData.date}" oninput="formData.date=this.value" /></div><div class="form-section"><div class="form-label">コスト（円）</div><div class="cost-wrap"><span class="cost-prefix">¥</span><input id="cost-input" type="number" class="form-input" placeholder="0" value="${esc(formData.cost)}" oninput="formData.cost=this.value; document.querySelector('.save-btn').disabled=!this.value;" /></div></div><div class="form-section"><div class="form-label">メモ（任意）</div><textarea class="form-input" rows="3" placeholder="内容・感想など..." oninput="formData.memo=this.value">${esc(formData.memo)}</textarea></div><button class="save-btn" style="background:${color}" onclick="addRecord()" ${canSave?'':'disabled'}>記録を保存する</button></div>`;
+  const selCat=getCat(formData.activityId), color=selCat?selCat.color:'#555';
+  return `<div><div style="margin-bottom:20px"><div style="font-size:18px;font-weight:900;margin-bottom:4px">新規記録</div><div style="font-size:12px;color:#666">トレーニングの記録を追加します</div></div><div class="form-section"><div class="form-label">種目</div>${cats.length===0?`<div style="color:#666;font-size:13px;padding:8px 0">カテゴリがありません</div>`:`<div class="activity-grid">${actBtns}</div>`}</div><div class="form-section"><div class="form-label">日付</div><input type="date" class="form-input" value="${formData.date}" oninput="formData.date=this.value; updateSaveBtn();" /></div><div class="form-section"><div class="form-label">コスト（円）</div><div class="cost-wrap"><span class="cost-prefix">¥</span><input id="cost-input" type="number" class="form-input" placeholder="0" value="${esc(formData.cost)}" oninput="formData.cost=this.value; updateSaveBtn();" /></div></div><div class="form-section"><div class="form-label">メモ（任意）</div><textarea class="form-input" rows="3" placeholder="内容・感想など..." oninput="formData.memo=this.value">${esc(formData.memo)}</textarea></div><button id="save-btn" class="save-btn" style="background:${color}" onclick="addRecord()" disabled>記録を保存する</button></div>`;
 }
 
 function renderStats() {
@@ -231,6 +231,11 @@ function renderCats() {
   const colorGrid=COLORS.map(col=>`<button class="color-opt${newCat.color===col?' selected':''}" style="background:${col}" onclick="selColor('${col}')"></button>`).join('');
   const canAdd=newCat.label.trim().length>0;
   return `<div><div style="margin-bottom:20px"><div style="font-size:18px;font-weight:900;margin-bottom:4px">カテゴリ管理</div><div style="font-size:12px;color:#666">種目を自由に追加・削除できます</div></div><div class="cat-list">${catList}</div><div class="add-cat-box"><div class="add-cat-title">＋ 新しいカテゴリを追加</div><div class="form-label">アイコン</div><div class="emoji-grid">${emojiGrid}</div><div class="form-label">カラー</div><div class="color-grid">${colorGrid}</div><div class="form-label">名前</div><input type="text" class="form-input" placeholder="例：水泳、ヨガ…" maxlength="12" value="${esc(newCat.label)}" oninput="newCat.label=this.value;document.getElementById('add-btn').className='add-cat-btn'+(this.value.trim()?' ready':'');" style="margin-bottom:14px" /><button id="add-btn" class="add-cat-btn${canAdd?' ready':''}" onclick="addCat()">${newCat.icon} カテゴリを追加する</button></div></div>`;
+}
+
+function updateSaveBtn() {
+  const btn=document.getElementById('save-btn');
+  if(btn) btn.disabled=!(formData.date&&formData.cost&&formData.activityId);
 }
 
 function setFilter(k){filterActivity=k;render();}
