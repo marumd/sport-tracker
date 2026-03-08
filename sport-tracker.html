@@ -25,9 +25,11 @@
     .header-cost-value { font-family: 'Bebas Neue'; font-size: 22px; color: #fff; letter-spacing: 1px; text-align: right; }
     .sync-status { font-size: 10px; text-align: right; margin-top: 2px; }
     .tabs { display: flex; gap: 2px; }
-    .tab-btn { flex: 1; padding: 10px 0; background: transparent; color: #666; font-weight: 700; font-size: 12px; border-radius: 8px 8px 0 0; transition: all .2s; }
+    .tab-btn { flex: 1; padding: 10px 0; background: transparent; color: #666; font-weight: 700; font-size: 11px; border-radius: 8px 8px 0 0; transition: all .2s; }
     .tab-btn.active { background: #fff; color: #0a0a0f; }
     .content { flex: 1; padding: 16px; overflow-y: auto; }
+
+    /* LIST */
     .filter-chips { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
     .chip { padding: 6px 14px; border-radius: 20px; background: #1a1a2e; color: #aaa; font-size: 12px; font-weight: 700; transition: all .2s; border: none; }
     .records { display: flex; flex-direction: column; gap: 10px; }
@@ -46,6 +48,8 @@
     .empty-icon { font-size: 48px; margin-bottom: 12px; }
     .empty-text { font-size: 14px; }
     .empty-sub { font-size: 12px; margin-top: 6px; }
+
+    /* ADD */
     .form-section { margin-bottom: 16px; }
     .form-label { font-size: 11px; color: #888; margin-bottom: 8px; letter-spacing: 1px; text-transform: uppercase; }
     .activity-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
@@ -60,6 +64,11 @@
     textarea.form-input { resize: none; line-height: 1.6; }
     .save-btn { width: 100%; padding: 16px; border-radius: 14px; color: #fff; font-weight: 900; font-size: 15px; transition: all .2s; letter-spacing: 0.5px; }
     .save-btn:disabled { opacity: 0.4; background: #1a1a2e !important; }
+
+    /* STATS */
+    .stats-mode-switch { display: flex; background: #12121f; border-radius: 12px; padding: 4px; margin-bottom: 16px; border: 1px solid #1e1e30; }
+    .stats-mode-btn { flex: 1; padding: 8px; border-radius: 8px; background: transparent; color: #666; font-weight: 700; font-size: 12px; transition: all .2s; }
+    .stats-mode-btn.active { background: #fff; color: #0a0a0f; }
     .stats-total { background: #12121f; border-radius: 16px; padding: 20px; margin-bottom: 16px; border: 1px solid #1e1e30; text-align: center; }
     .stats-label { font-size: 11px; color: #666; letter-spacing: 1px; margin-bottom: 6px; }
     .stats-num { font-family: 'Bebas Neue'; font-size: 52px; line-height: 1; color: #fff; }
@@ -79,6 +88,19 @@
     .progress-track { background: #0a0a0f; border-radius: 4px; height: 6px; overflow: hidden; }
     .progress-bar { height: 100%; border-radius: 4px; transition: width 0.6s ease; }
     .progress-pct { font-size: 10px; color: #555; margin-top: 4px; }
+
+    /* MONTH NAV */
+    .month-nav { display: flex; align-items: center; justify-content: space-between; background: #12121f; border-radius: 14px; padding: 12px 16px; margin-bottom: 16px; border: 1px solid #1e1e30; }
+    .month-nav-btn { background: #1a1a2e; color: #aaa; border-radius: 8px; padding: 6px 14px; font-size: 16px; font-weight: 700; transition: all .2s; }
+    .month-nav-btn:active { background: #2a2a3e; }
+    .month-nav-label { font-family: 'Bebas Neue'; font-size: 22px; letter-spacing: 1px; color: #fff; }
+    .month-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+    .month-summary-card { background: #12121f; border-radius: 14px; padding: 14px; border: 1px solid #1e1e30; text-align: center; }
+    .month-summary-label { font-size: 10px; color: #666; letter-spacing: 1px; margin-bottom: 6px; }
+    .month-summary-value { font-family: 'Bebas Neue'; font-size: 28px; color: #fff; letter-spacing: 1px; }
+    .month-summary-unit { font-size: 10px; color: #666; margin-top: 2px; }
+
+    /* CATS */
     .cat-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
     .cat-item { background: #12121f; border-radius: 14px; padding: 14px 16px; border: 1px solid #1e1e30; display: flex; align-items: center; gap: 12px; }
     .cat-icon-box { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
@@ -88,14 +110,17 @@
     .cat-delete-btn { background: #ff474720; color: #FF4757; border-radius: 8px; padding: 6px 10px; font-size: 11px; font-weight: 700; flex-shrink: 0; }
     .add-cat-box { background: #12121f; border-radius: 16px; padding: 18px; border: 1px solid #1e1e30; }
     .add-cat-title { font-size: 14px; font-weight: 700; margin-bottom: 14px; color: #ccc; }
-    .emoji-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 14px; }
-    .emoji-opt { background: #1a1a2e; border-radius: 8px; padding: 7px 0; font-size: 18px; text-align: center; border: 2px solid transparent; transition: all .15s; }
+    .emoji-section-label { font-size: 10px; color: #555; letter-spacing: 1px; margin: 10px 0 6px; text-transform: uppercase; }
+    .emoji-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 5px; margin-bottom: 6px; }
+    .emoji-opt { background: #1a1a2e; border-radius: 7px; padding: 6px 0; font-size: 16px; text-align: center; border: 2px solid transparent; transition: all .15s; }
     .emoji-opt.selected { border-color: #fff; background: #2a2a3e; }
     .color-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; margin-bottom: 14px; }
     .color-opt { height: 26px; border-radius: 6px; border: 2px solid transparent; transition: all .15s; }
     .color-opt.selected { border-color: #fff; transform: scale(1.1); }
     .add-cat-btn { width: 100%; padding: 13px; border-radius: 12px; background: #2a2a3e; color: #555; font-weight: 700; font-size: 14px; transition: all .2s; border: 1px solid #333; }
     .add-cat-btn.ready { background: #fff; color: #0a0a0f; border-color: #fff; }
+
+    /* COMMON */
     .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: #2ED573; color: #0a0a0f; padding: 10px 20px; border-radius: 20px; font-weight: 700; font-size: 13px; animation: toastIn .3s ease; z-index: 100; white-space: nowrap; }
     @keyframes toastIn { from { opacity:0; transform: translateX(-50%) translateY(10px); } to { opacity:1; transform: translateX(-50%) translateY(0); } }
     .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 50; display: flex; align-items: flex-end; justify-content: center; animation: fadeIn .2s; }
@@ -148,23 +173,48 @@ async function gasPost(data) {
   return res.json();
 }
 
-const EMOJIS = ['🏋️','⚽','🏀','🎾','🏊','🚴','🧘','🥊','🏐','🎿','🏸','🤸','🧗','🎣','🏓','🏒','🏌️','🤽','🚣','🎽','🥋','🏹','🛹','🛼','🏄','🤾','🏇','⛷️'];
-const COLORS  = ['#FF4757','#FF6B81','#FF9F43','#FFC312','#A3CB38','#2ED573','#1E90FF','#7158E2','#F79F1F','#009432','#1289A7','#5758BB','#ED4C67','#006266','#EA2027','#C4E538'];
+// ── 絵文字をカテゴリ別に整理 ────────────────────────────
+const EMOJI_GROUPS = [
+  { label: 'スポーツ', emojis: ['🏋️','⚽','🏀','🎾','🏊','🚴','🧘','🥊','🏐','🎿','🏸','🤸','🧗','🎣','🏓','🏒','🏌️','🤽','🚣','🏄','🤾','🏇','⛷️','🥋','🏹','🛹','🛼','⛸️'] },
+  { label: 'グルメ・カフェ', emojis: ['☕','🍵','🧋','🍺','🍷','🍽️','🍜','🍣','🍕','🍔','🥗','🧁','🍰','🍩','🥐','🍱','🥤','🧃','🍶','🥂'] },
+  { label: '勉強・仕事', emojis: ['📚','✏️','💻','📝','🎓','📖','🖊️','📐','🔬','🧪','💡','📊','📈','🗂️','📌','🖥️','⌨️','🖱️','📓','🧠'] },
+  { label: '趣味・生活', emojis: ['🎮','🎸','🎹','🎨','🎬','📷','🎤','🎧','🛍️','✈️','🚗','🏠','🛁','💤','🧹','🛒','🌿','🐾','🎭','🎪'] },
+  { label: 'その他', emojis: ['⭐','❤️','🔥','💰','💊','🏥','💈','🎁','🌟','💎','🔑','🎯','🏆','🎲','🃏','🎰','🌈','⚡','🌙','☀️'] },
+];
 
+const COLORS = ['#FF4757','#FF6B81','#FF9F43','#FFC312','#A3CB38','#2ED573','#1E90FF','#7158E2','#F79F1F','#009432','#1289A7','#5758BB','#ED4C67','#006266','#EA2027','#C4E538'];
+
+// ── state ────────────────────────────────────────────────
 let records=[], cats=[], currentView='list', filterActivity='all';
 let formData={ date:today(), activityId:null, cost:'', memo:'' };
-let newCat={ label:'', icon:EMOJIS[0], color:COLORS[0] };
+let newCat={ label:'', icon: EMOJI_GROUPS[0].emojis[0], color:COLORS[0] };
 let pendingDelCatId=null;
+let statsMode='all'; // 'all' | 'month'
+let statsMonth=currentYM(); // 'YYYY-MM'
 
-function today()     { return new Date().toISOString().split('T')[0]; }
-function fmtCost(n)  { return '¥'+Number(n).toLocaleString(); }
-function fmtDate(d)  { const date=new Date(d); const y=date.getUTCFullYear(),m=String(date.getUTCMonth()+1).padStart(2,'0'),day=String(date.getUTCDate()).padStart(2,'0'); return `${y}年${m}月${day}日`; }
-function esc(s)      { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-function rgba(hex,a) { const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16); return `rgba(${r},${g},${b},${a})`; }
-function getCat(id)  { return cats.find(c=>c.id===id); }
-function totalCost() { return records.reduce((s,r)=>s+r.cost,0); }
-function setSyncStatus(msg,color) { const el=document.getElementById('sync-status'); if(el){el.textContent=msg;el.style.color=color||'#666';} }
+// ── utils ────────────────────────────────────────────────
+function today()       { return new Date().toISOString().split('T')[0]; }
+function currentYM()   { return new Date().toISOString().slice(0,7); }
+function fmtCost(n)    { return '¥'+Number(n).toLocaleString(); }
+function fmtDate(d)    { const [y,m,day]=String(d).split('T')[0].split('-'); return `${y}年${m}月${day}日`; }
+function fmtYM(ym)     { const [y,m]=ym.split('-'); return `${y}年${m}月`; }
+function esc(s)        { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function rgba(hex,a)   { const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16); return `rgba(${r},${g},${b},${a})`; }
+function getCat(id)    { return cats.find(c=>c.id===id); }
+function totalCost()   { return records.reduce((s,r)=>s+r.cost,0); }
+function getDateStr(d) { return String(d).split('T')[0]; }
+function setSyncStatus(msg,color){ const el=document.getElementById('sync-status'); if(el){el.textContent=msg;el.style.color=color||'#666';} }
 
+function prevMonth(ym) {
+  const [y,m]=ym.split('-').map(Number);
+  return m===1 ? `${y-1}-12` : `${y}-${String(m-1).padStart(2,'0')}`;
+}
+function nextMonth(ym) {
+  const [y,m]=ym.split('-').map(Number);
+  return m===12 ? `${y+1}-01` : `${y}-${String(m+1).padStart(2,'0')}`;
+}
+
+// ── init ─────────────────────────────────────────────────
 async function init() {
   document.getElementById('content').innerHTML='<div class="loading"><div class="spinner"></div><div style="font-size:13px">データを読み込み中…</div></div>';
   setSyncStatus('同期中…','#FFC312');
@@ -172,7 +222,7 @@ async function init() {
     const [catRes,recRes]=await Promise.all([gasGet('getCategories'),gasGet('getAll')]);
     cats=catRes.categories||[];
     records=(recRes.records||[]).map(r=>({...r,cost:Number(r.cost)}));
-    records.sort((a,b)=>b.date.localeCompare(a.date));
+    records.sort((a,b)=>getDateStr(b.date).localeCompare(getDateStr(a.date)));
     if(!formData.activityId&&cats.length) formData.activityId=cats[0].id;
     setSyncStatus('✓ 同期済み','#2ED573');
   } catch(e) {
@@ -197,6 +247,7 @@ function render() {
   else if(currentView==='cats') c.innerHTML=renderCats();
 }
 
+// ── LIST ─────────────────────────────────────────────────
 function renderList() {
   const filtered=filterActivity==='all'?records:records.filter(r=>r.activityId===filterActivity);
   const chips=[
@@ -206,47 +257,113 @@ function renderList() {
   const empty=`<div class="empty"><div class="empty-icon">📋</div><div class="empty-text">記録がありません</div><div class="empty-sub">「追加」から記録を入れましょう</div></div>`;
   const cards=filtered.map((r,i)=>{
     const act=getCat(r.activityId);
-    const label=act?esc(act.label):'削除済み', icon=act?act.icon:'❓', color=act?act.color:'#666';
+    const label=act?esc(act.label):'削除済み',icon=act?act.icon:'❓',color=act?act.color:'#666';
     return `<div class="record-card" style="animation-delay:${i*.04}s"><div class="record-bar" style="background:${color}"></div><div class="record-top"><div class="record-left"><div class="record-icon" style="background:${rgba(color,.12)};border:1px solid ${rgba(color,.2)}">${icon}</div><div><div class="record-label" style="color:${color}">${label}</div><div class="record-date">${fmtDate(r.date)}</div></div></div><div style="display:flex;align-items:center"><div class="record-cost">${fmtCost(r.cost)}</div><button class="delete-btn" onclick="deleteRecord(${r.id})">削除</button></div></div>${r.memo?`<div class="record-memo">${esc(r.memo)}</div>`:''}</div>`;
   }).join('');
   return `<div class="filter-chips">${chips}</div><div class="records">${filtered.length===0?empty:cards}</div>`;
 }
 
+// ── ADD ──────────────────────────────────────────────────
 function renderAdd() {
   if(!formData.activityId&&cats.length) formData.activityId=cats[0].id;
   const actBtns=cats.map(c=>{const sel=formData.activityId===c.id;return `<button class="activity-btn${sel?' selected':''}" style="${sel?`background:${c.color};border-color:${c.color}`:''}" onclick="setActivity('${c.id}')"><span class="emoji">${c.icon}</span><span>${esc(c.label)}</span></button>`;}).join('');
-  const selCat=getCat(formData.activityId), color=selCat?selCat.color:'#555';
+  const selCat=getCat(formData.activityId),color=selCat?selCat.color:'#555';
   return `<div><div style="margin-bottom:20px"><div style="font-size:18px;font-weight:900;margin-bottom:4px">新規記録</div><div style="font-size:12px;color:#666">トレーニングの記録を追加します</div></div><div class="form-section"><div class="form-label">種目</div>${cats.length===0?`<div style="color:#666;font-size:13px;padding:8px 0">カテゴリがありません</div>`:`<div class="activity-grid">${actBtns}</div>`}</div><div class="form-section"><div class="form-label">日付</div><input type="date" class="form-input" value="${formData.date}" oninput="formData.date=this.value; updateSaveBtn();" /></div><div class="form-section"><div class="form-label">コスト（円）</div><div class="cost-wrap"><span class="cost-prefix">¥</span><input id="cost-input" type="number" class="form-input" placeholder="0" value="${esc(formData.cost)}" oninput="formData.cost=this.value; updateSaveBtn();" /></div></div><div class="form-section"><div class="form-label">メモ（任意）</div><textarea class="form-input" rows="3" placeholder="内容・感想など..." oninput="formData.memo=this.value">${esc(formData.memo)}</textarea></div><button id="save-btn" class="save-btn" style="background:${color}" onclick="addRecord()" disabled>記録を保存する</button></div>`;
 }
 
+// ── STATS ────────────────────────────────────────────────
 function renderStats() {
-  const total=records.length, cost=totalCost();
-  const statCards=cats.map(c=>{const recs=records.filter(r=>r.activityId===c.id),count=recs.length,tot=recs.reduce((s,r)=>s+r.cost,0),avg=count?Math.round(tot/count):0,pct=total?(count/total*100).toFixed(0):0;return `<div class="stat-card"><div class="stat-card-top"><div class="stat-left"><span class="stat-emoji">${c.icon}</span><div><div class="stat-name" style="color:${c.color}">${esc(c.label)}</div><div class="stat-count">${count}回</div></div></div><div class="stat-right"><div class="stat-total-cost">${fmtCost(tot)}</div><div class="stat-avg">平均 ${fmtCost(avg)}/回</div></div></div><div class="progress-track"><div class="progress-bar" style="width:${pct}%;background:${c.color}"></div></div><div class="progress-pct">${pct}%</div></div>`;}).join('');
-  return `<div><div style="margin-bottom:20px"><div style="font-size:18px;font-weight:900;margin-bottom:4px">統計</div><div style="font-size:12px;color:#666">全期間の記録サマリー</div></div><div class="stats-total"><div class="stats-label">TOTAL RECORDS</div><div class="stats-num">${total}</div><div class="stats-unit">回のトレーニング</div><div class="stats-divider"></div><div class="stats-label">TOTAL COST</div><div class="stats-total-cost">${fmtCost(cost)}</div></div><div class="stat-cards">${statCards||'<div style="color:#555;font-size:13px">カテゴリがありません</div>'}</div></div>`;
+  const modeSwitch=`<div class="stats-mode-switch">
+    <button class="stats-mode-btn${statsMode==='all'?' active':''}" onclick="setStatsMode('all')">全期間</button>
+    <button class="stats-mode-btn${statsMode==='month'?' active':''}" onclick="setStatsMode('month')">月別</button>
+  </div>`;
+  return statsMode==='all' ? modeSwitch+renderStatsAll() : modeSwitch+renderStatsMonth();
 }
 
+function renderStatsAll() {
+  const total=records.length, cost=totalCost();
+  const statCards=cats.map(c=>{
+    const recs=records.filter(r=>r.activityId===c.id),count=recs.length,tot=recs.reduce((s,r)=>s+r.cost,0),avg=count?Math.round(tot/count):0,pct=total?(count/total*100).toFixed(0):0;
+    return `<div class="stat-card"><div class="stat-card-top"><div class="stat-left"><span class="stat-emoji">${c.icon}</span><div><div class="stat-name" style="color:${c.color}">${esc(c.label)}</div><div class="stat-count">${count}回</div></div></div><div class="stat-right"><div class="stat-total-cost">${fmtCost(tot)}</div><div class="stat-avg">平均 ${fmtCost(avg)}/回</div></div></div><div class="progress-track"><div class="progress-bar" style="width:${pct}%;background:${c.color}"></div></div><div class="progress-pct">${pct}%</div></div>`;
+  }).join('');
+  return `<div class="stats-total"><div class="stats-label">TOTAL RECORDS</div><div class="stats-num">${total}</div><div class="stats-unit">回のトレーニング</div><div class="stats-divider"></div><div class="stats-label">TOTAL COST</div><div class="stats-total-cost">${fmtCost(cost)}</div></div><div class="stat-cards">${statCards||'<div style="color:#555;font-size:13px">カテゴリがありません</div>'}</div>`;
+}
+
+function renderStatsMonth() {
+  const monthRecords=records.filter(r=>getDateStr(r.date).slice(0,7)===statsMonth);
+  const mCount=monthRecords.length, mCost=monthRecords.reduce((s,r)=>s+r.cost,0);
+
+  const nav=`<div class="month-nav">
+    <button class="month-nav-btn" onclick="changeMonth(-1)">‹</button>
+    <div class="month-nav-label">${fmtYM(statsMonth)}</div>
+    <button class="month-nav-btn" onclick="changeMonth(1)">›</button>
+  </div>`;
+
+  const summary=`<div class="month-summary">
+    <div class="month-summary-card"><div class="month-summary-label">RECORDS</div><div class="month-summary-value">${mCount}</div><div class="month-summary-unit">回</div></div>
+    <div class="month-summary-card"><div class="month-summary-label">TOTAL COST</div><div class="month-summary-value" style="font-size:${mCost>=100000?'20px':'28px'}">${fmtCost(mCost)}</div><div class="month-summary-unit">合計</div></div>
+  </div>`;
+
+  const statCards=cats.map(c=>{
+    const recs=monthRecords.filter(r=>r.activityId===c.id),count=recs.length,tot=recs.reduce((s,r)=>s+r.cost,0),avg=count?Math.round(tot/count):0,pct=mCount?(count/mCount*100).toFixed(0):0;
+    if(count===0) return '';
+    return `<div class="stat-card"><div class="stat-card-top"><div class="stat-left"><span class="stat-emoji">${c.icon}</span><div><div class="stat-name" style="color:${c.color}">${esc(c.label)}</div><div class="stat-count">${count}回</div></div></div><div class="stat-right"><div class="stat-total-cost">${fmtCost(tot)}</div><div class="stat-avg">平均 ${fmtCost(avg)}/回</div></div></div><div class="progress-track"><div class="progress-bar" style="width:${pct}%;background:${c.color}"></div></div><div class="progress-pct">${pct}%</div></div>`;
+  }).filter(Boolean).join('');
+
+  const empty=mCount===0?`<div class="empty"><div class="empty-icon">📅</div><div class="empty-text">この月の記録はありません</div></div>`:'';
+
+  return nav+summary+`<div class="stat-cards">${statCards||empty}</div>`;
+}
+
+// ── CATS ─────────────────────────────────────────────────
 function renderCats() {
   const catList=cats.length?cats.map(c=>`<div class="cat-item"><div class="cat-icon-box" style="background:${rgba(c.color,.15)};border:1px solid ${rgba(c.color,.25)}">${c.icon}</div><div class="cat-info"><div class="cat-name" style="color:${c.color}">${esc(c.label)}</div>${c.isDefault?`<div class="cat-badge">デフォルト</div>`:''}</div><button class="cat-delete-btn" onclick="confirmDeleteCat('${c.id}')">削除</button></div>`).join(''):`<div style="color:#555;font-size:13px;padding:8px 0">カテゴリがありません</div>`;
-  const emojiGrid=EMOJIS.map(e=>`<button class="emoji-opt${newCat.icon===e?' selected':''}" onclick="selEmoji('${e}')">${e}</button>`).join('');
+
+  // 絵文字グループ別に表示
+  const emojiSections=EMOJI_GROUPS.map(g=>`
+    <div class="emoji-section-label">${g.label}</div>
+    <div class="emoji-grid">${g.emojis.map(e=>`<button class="emoji-opt${newCat.icon===e?' selected':''}" onclick="selEmoji('${e}')">${e}</button>`).join('')}</div>
+  `).join('');
+
   const colorGrid=COLORS.map(col=>`<button class="color-opt${newCat.color===col?' selected':''}" style="background:${col}" onclick="selColor('${col}')"></button>`).join('');
   const canAdd=newCat.label.trim().length>0;
-  return `<div><div style="margin-bottom:20px"><div style="font-size:18px;font-weight:900;margin-bottom:4px">カテゴリ管理</div><div style="font-size:12px;color:#666">種目を自由に追加・削除できます</div></div><div class="cat-list">${catList}</div><div class="add-cat-box"><div class="add-cat-title">＋ 新しいカテゴリを追加</div><div class="form-label">アイコン</div><div class="emoji-grid">${emojiGrid}</div><div class="form-label">カラー</div><div class="color-grid">${colorGrid}</div><div class="form-label">名前</div><input type="text" class="form-input" placeholder="例：水泳、ヨガ…" maxlength="12" value="${esc(newCat.label)}" oninput="newCat.label=this.value;document.getElementById('add-btn').className='add-cat-btn'+(this.value.trim()?' ready':'');" style="margin-bottom:14px" /><button id="add-btn" class="add-cat-btn${canAdd?' ready':''}" onclick="addCat()">${newCat.icon} カテゴリを追加する</button></div></div>`;
+
+  return `<div>
+    <div style="margin-bottom:20px"><div style="font-size:18px;font-weight:900;margin-bottom:4px">カテゴリ管理</div><div style="font-size:12px;color:#666">種目を自由に追加・削除できます</div></div>
+    <div class="cat-list">${catList}</div>
+    <div class="add-cat-box">
+      <div class="add-cat-title">＋ 新しいカテゴリを追加</div>
+      <div class="form-label">アイコン</div>
+      ${emojiSections}
+      <div class="form-label" style="margin-top:14px">カラー</div>
+      <div class="color-grid" style="margin-bottom:14px">${colorGrid}</div>
+      <div class="form-label">名前</div>
+      <input type="text" class="form-input" placeholder="例：水泳、カフェ、勉強…" maxlength="12"
+        value="${esc(newCat.label)}"
+        oninput="newCat.label=this.value;document.getElementById('add-btn').className='add-cat-btn'+(this.value.trim()?' ready':'');"
+        style="margin-bottom:14px" />
+      <button id="add-btn" class="add-cat-btn${canAdd?' ready':''}" onclick="addCat()">${newCat.icon} カテゴリを追加する</button>
+    </div>
+  </div>`;
 }
+
+// ── actions ──────────────────────────────────────────────
+function setFilter(k)       { filterActivity=k; render(); }
+function setActivity(id)    { formData.activityId=id; render(); }
+function selEmoji(e)        { newCat.icon=e; render(); }
+function selColor(c)        { newCat.color=c; render(); }
+function setStatsMode(m)    { statsMode=m; render(); }
+function changeMonth(dir)   { statsMonth=dir===-1?prevMonth(statsMonth):nextMonth(statsMonth); render(); }
 
 function updateSaveBtn() {
   const btn=document.getElementById('save-btn');
   if(btn) btn.disabled=!(formData.date&&formData.cost&&formData.activityId);
 }
 
-function setFilter(k){filterActivity=k;render();}
-function setActivity(id){formData.activityId=id;render();}
-function selEmoji(e){newCat.icon=e;render();}
-function selColor(c){newCat.color=c;render();}
-
 async function addRecord() {
   if(!formData.date||!formData.cost||!formData.activityId) return;
   const rec={id:Date.now(),date:formData.date,activityId:formData.activityId,cost:Number(formData.cost),memo:formData.memo};
-  records.push(rec); records.sort((a,b)=>b.date.localeCompare(a.date));
+  records.push(rec); records.sort((a,b)=>getDateStr(b.date).localeCompare(getDateStr(a.date)));
   formData={date:today(),activityId:formData.activityId,cost:'',memo:''};
   switchView('list'); setSyncStatus('保存中…','#FFC312');
   try { await gasPost({action:'add',...rec}); setSyncStatus('✓ 同期済み','#2ED573'); showToast('✅ 記録を保存しました'); }
@@ -265,13 +382,13 @@ async function addCat() {
   const id='cat_'+Date.now();
   const cat={id,label:newCat.label.trim(),icon:newCat.icon,color:newCat.color,isDefault:false};
   cats.push(cat); if(!formData.activityId) formData.activityId=id;
-  newCat={label:'',icon:EMOJIS[0],color:COLORS[0]}; render(); setSyncStatus('保存中…','#FFC312');
+  newCat={label:'',icon:EMOJI_GROUPS[0].emojis[0],color:COLORS[0]}; render(); setSyncStatus('保存中…','#FFC312');
   try { await gasPost({action:'addCategory',...cat}); setSyncStatus('✓ 同期済み','#2ED573'); showToast('✅ カテゴリを追加しました'); }
   catch { setSyncStatus('⚠ 同期失敗','#FF4757'); showToast('⚠️ 保存に失敗しました'); }
 }
 
 function confirmDeleteCat(id) {
-  pendingDelCatId=id; const cat=getCat(id), used=records.filter(r=>r.activityId===id).length;
+  pendingDelCatId=id; const cat=getCat(id),used=records.filter(r=>r.activityId===id).length;
   const extra=used>0?`<br><br>このカテゴリには <strong style="color:#FF4757">${used}件</strong> の記録があります。`:'';
   const overlay=document.createElement('div'); overlay.className='modal-overlay'; overlay.id='del-modal';
   overlay.innerHTML=`<div class="modal-box"><div class="modal-title">カテゴリを削除</div><div class="modal-msg">「${esc(cat.label)}」を削除しますか？${extra}</div><div class="modal-btns"><button class="modal-cancel" onclick="closeModal()">キャンセル</button><button class="modal-confirm" onclick="doDeleteCat()">削除する</button></div></div>`;
