@@ -6,6 +6,9 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="theme-color" content="#0a0a0f" />
+  <meta name="apple-mobile-web-app-title" content="Daily Log" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
   <title>DAILY LOG</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet" />
   <style>
@@ -142,8 +145,8 @@
   <div class="header">
     <div class="header-top">
       <div>
-        <div class="header-title">DAILY LOG</div>
-        <div class="header-sub">LIFE TRACKER</div>
+        <div class="header-title">SPORT LOG</div>
+        <div class="header-sub">FITNESS TRACKER</div>
       </div>
       <div>
         <div class="header-cost-label">累計コスト</div>
@@ -409,6 +412,15 @@ async function doDeleteCat() {
 function showToast(msg) { const t=document.createElement('div'); t.className='toast'; t.textContent=msg; document.body.appendChild(t); setTimeout(()=>t.remove(),2200); }
 
 init();
+
+// Service Worker 登録
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js')
+      .then(() => console.log('SW registered'))
+      .catch(e => console.log('SW error:', e));
+  });
+}
 </script>
 </body>
 </html>
